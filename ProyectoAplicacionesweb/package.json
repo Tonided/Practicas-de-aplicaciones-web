@@ -1,0 +1,12 @@
+{
+  "name": "becas-uleam",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de Gestión de Becas y Ayudas Económicas (Uleam)",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test tests/api.test.js",
+    "crear-usuario": "node server/crear-usuario.js"
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta - Sistema de Becas Uleam</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../login/style.css">
+    <link rel="stylesheet" href="registrostyles.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+</head>
+<body>
+    <main class="login">
+        <aside class="login__marca">
+            <div class="emblema" aria-hidden="true">U</div>
+            <h1>Crea tu cuenta de estudiante</h1>
+            <p>Con tu cuenta podrás postular a una beca, subir tus documentos y seguir el estado de tu trámite.</p>
+            <ul>
+                <li>Tus datos se usan solo para gestionar tu solicitud</li>
+                <li>Tu contraseña se guarda protegida, nunca en texto plano</li>
+                <li>Las cuentas del personal las crea la administración</li>
+            </ul>
+            <small>Universidad Laica Eloy Alfaro de Manabí</small>
+        </aside>
+
+        <section class="login__panel">
+            <form id="registro-form" class="card login__card login__card--ancho" novalidate>
+                <h2>Crear cuenta</h2>
+                <p class="sub">Completa tus datos para registrarte.</p>
+
+                <div class="fila-2">
+                    <div class="campo">
+                        <label for="nombres">Nombres</label>
+                        <input type="text" id="nombres" autocomplete="given-name" maxlength="80">
+                        <span class="campo__error" id="error-nombres"></span>
+                    </div>
+                    <div class="campo">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" autocomplete="family-name" maxlength="80">
+                        <span class="campo__error" id="error-apellidos"></span>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" autocomplete="email" maxlength="120" placeholder="usuario@uleam.edu.ec">
+                    <span class="campo__error" id="error-email"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="cedula">Cédula de identidad</label>
+                    <input type="text" id="cedula" inputmode="numeric" maxlength="10" autocomplete="off" placeholder="10 dígitos">
+                    <span class="campo__error" id="error-cedula"></span>
+                </div>
+
+                <div class="fila-2">
+                    <div class="campo">
+                        <label for="clave">Contraseña</label>
+                        <input type="password" id="clave" autocomplete="new-password" maxlength="128">
+                        <span class="campo__error" id="error-clave"></span>
+                    </div>
+                    <div class="campo">
+                        <label for="confirmacion">Confirmar contraseña</label>
+                        <input type="password" id="confirmacion" autocomplete="new-password" maxlength="128">
+                        <span class="campo__error" id="error-confirmacion"></span>
+                    </div>
+                </div>
+                <p class="ayuda">Mínimo 8 caracteres, con letras y números.</p>
+
+                <div class="campo" id="campo-acepta">
+                    <label class="acepto"><input type="checkbox" id="acepta"> Acepto que mis datos personales se usen únicamente para gestionar mi solicitud de beca.</label>
+                    <span class="campo__error" id="error-acepta"></span>
+                </div>
+
+                <p class="alerta" id="error-general" role="alert" hidden></p>
+                <button type="submit" class="btn btn--primario btn--bloque" id="btn-registrar">Crear cuenta</button>
+
+                <div class="links">
+                    <span>¿Ya tienes cuenta? <a href="../login/index.html">Iniciar sesión</a></span>
+                    <a href="../inicio/index.html">Volver al portal</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="../assets/js/core.js"></script>
+    <script src="registroscript.js"></script>
+</body>
+</html>

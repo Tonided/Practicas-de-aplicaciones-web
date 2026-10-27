@@ -1,0 +1,7 @@
+/* Registro: reutiliza el diseño del login (../login/style.css) */
+.login__card--ancho { max-width: 540px; }
+.fila-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+.ayuda { margin: -.5rem 0 1rem; font-size: .8rem; color: var(--suave); }
+.campo label.acepto { display: flex; align-items: flex-start; gap: .6rem; margin: 0; font-size: .88rem; font-weight: 400; line-height: 1.4; }
+.campo .acepto input { flex: none; width: 1.1rem; height: 1.1rem; margin-top: .1rem; padding: 0; accent-color: var(--azul); }
+@media (max-width: 560px) { .fila-2 { grid-template-columns: 1fr; } }

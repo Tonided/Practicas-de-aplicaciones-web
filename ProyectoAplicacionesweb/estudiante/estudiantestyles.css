@@ -1,0 +1,94 @@
+/* Vista del estudiante */
+.contenedor h1 { font-size: 1.6rem; }
+.sub { margin: .3rem 0 1.5rem; color: var(--suave); }
+.panel { display: grid; grid-template-columns: 1fr 320px; gap: 1.25rem; align-items: start; }
+.columna { display: grid; gap: 1.25rem; }
+.bloque { padding: 1.4rem; }
+.bloque h2 { font-size: 1.1rem; }
+.bloque__cab { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.1rem; }
+.action-area > p { margin-bottom: 1rem; color: var(--suave); font-size: .93rem; }
+
+/* Barra de progreso: la secuencia es real (4 etapas del trámite) */
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); counter-reset: paso; }
+.step { position: relative; padding-top: 2.6rem; text-align: center; font-size: .85rem; color: var(--suave); counter-increment: paso; }
+.step::before { content: counter(paso); position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 1; width: 2rem; height: 2rem; display: grid; place-items: center; border-radius: 50%; background: #fff; border: 2px solid var(--borde); font-weight: 700; }
+.step::after { content: ""; position: absolute; top: calc(1rem - 1px); left: calc(-50% + 1rem); width: calc(100% - 2rem); height: 2px; background: var(--borde); }
+.step:first-child::after { display: none; }
+.step.completed, .step.active { color: var(--azul-900); font-weight: 600; }
+.step.completed::before { content: "✓"; background: var(--ok); border-color: var(--ok); color: #fff; }
+.step.active::before { border-color: var(--azul); color: var(--azul); box-shadow: 0 0 0 4px rgba(40, 72, 153, .15); }
+.step.warn { color: var(--warn); font-weight: 600; }
+.step.warn::before { border-color: var(--warn); background: var(--warn-bg); color: var(--warn); }
+.step.rejected { color: var(--peligro); font-weight: 600; }
+.step.rejected::before { content: "✕"; background: var(--peligro); border-color: var(--peligro); color: #fff; }
+.step.completed::after, .step.active::after, .step.warn::after, .step.rejected::after { background: var(--ok); }
+
+/* Formulario de subida */
+.file-upload-group { text-align: left; margin-bottom: 1rem; padding: 1rem; background: #f8f9fc; border: 1px dashed #b9c2d6; border-radius: 8px; }
+.file-upload-group label { display: block; margin-bottom: .45rem; font-size: .9rem; font-weight: 600; }
+.file-upload-group input[type="file"] { width: 100%; font-size: .9rem; color: var(--suave); }
+.alerta--warn { background: var(--warn-bg); color: var(--warn); }
+
+/* Mensajes de estado */
+.success-message { padding: 1.25rem; border: 1px solid #a5d6a7; border-radius: 8px; background: var(--ok-bg); color: var(--ok); }
+.success-message h3 { margin-bottom: .4rem; font-size: 1.05rem; color: inherit; }
+.success-message p { color: var(--texto); font-size: .92rem; }
+.success-message--rechazo { border-color: #f0b4ae; background: var(--peligro-bg); color: var(--peligro); }
+
+/* Notificaciones */
+.notifs { list-style: none; display: grid; gap: .6rem; }
+.notifs li { padding: .7rem .8rem; border: 1px solid var(--borde); border-radius: 8px; font-size: .88rem; }
+.notifs li.nueva { background: var(--azul-50); border-color: #c5d2f2; }
+.notifs time { display: block; margin-top: .25rem; font-size: .76rem; color: var(--suave); }
+
+@media (max-width: 860px) { .panel { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .step { font-size: .74rem; } .bloque { padding: 1.1rem; } }
+
+.campo-select { width: 100%; padding: .65rem .8rem; border: 1px solid var(--borde); border-radius: 8px; background: #fff; font-family: inherit; font-size: .95rem; }
+
+/* ---------- Navegación por secciones ---------- */
+h1:focus { outline: none; }
+.tabs { background: #fff; border-bottom: 1px solid var(--borde); }
+.tabs__in { display: flex; gap: .25rem; max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; overflow-x: auto; }
+.tabs a { display: inline-flex; align-items: center; gap: .5rem; padding: .9rem 1rem; color: var(--suave); font-size: .93rem; font-weight: 600; white-space: nowrap; }
+.tabs a:hover { color: var(--azul); text-decoration: none; }
+.tabs a.activo { color: var(--azul-900); box-shadow: inset 0 -3px 0 var(--dorado); }
+.contador { display: inline-grid; place-items: center; min-width: 1.35rem; height: 1.35rem; padding: 0 .35rem; border-radius: 999px; background: var(--peligro); color: #fff; font-size: .72rem; font-weight: 700; }
+
+/* ---------- Explorador de becas ---------- */
+.vista-cab { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+.vista-cab .sub { margin-bottom: 0; }
+.buscador input { width: min(300px, 100%); padding: .6rem .9rem; border: 1px solid var(--borde); border-radius: 8px; background: #fff; font-family: inherit; font-size: .93rem; }
+.buscador input:focus { outline: none; border-color: var(--azul); box-shadow: 0 0 0 3px rgba(40, 72, 153, .15); }
+.rejilla-becas { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+.beca-card { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; padding: 1.4rem; transition: transform var(--t), box-shadow var(--t); }
+.beca-card:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(18, 36, 90, .08), 0 14px 32px rgba(18, 36, 90, .12); }
+.beca-card--actual { border-color: var(--azul); }
+.beca-card__cab { display: flex; align-items: flex-start; justify-content: space-between; gap: .6rem; width: 100%; }
+.beca-card h2 { font-size: 1.1rem; }
+.beca-card__desc { flex: 1; color: var(--suave); font-size: .92rem; }
+.beca-card__meta { font-size: .82rem; color: var(--suave); }
+.aviso-info { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1.25rem; padding: .9rem 1.1rem; border: 1px solid #c5d2f2; border-radius: var(--radio); background: var(--azul-50); font-size: .93rem; }
+
+/* ---------- Detalle de beca ---------- */
+.detalle { padding: 1.75rem; }
+.detalle h1 { margin-bottom: .5rem; }
+.detalle__desc { margin-bottom: 1.25rem; color: var(--suave); }
+.requisitos { list-style: none; display: grid; gap: .6rem; margin: .75rem 0 1.5rem; }
+.requisitos li { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .7rem .9rem; border: 1px solid var(--borde); border-radius: 8px; font-size: .93rem; }
+.nota { margin-top: .75rem; font-size: .88rem; color: var(--suave); }
+
+/* ---------- Mis postulaciones ---------- */
+.meta { margin-top: .15rem; font-size: .85rem; color: var(--suave); }
+.estados { display: flex; flex-wrap: wrap; gap: .4rem; }
+.timeline { list-style: none; margin-left: .4rem; border-left: 2px solid var(--borde); }
+.timeline li { position: relative; padding: 0 0 1.1rem 1.1rem; }
+.timeline li::before { content: ""; position: absolute; left: -.43rem; top: .3rem; width: .7rem; height: .7rem; border-radius: 50%; background: var(--azul); }
+.timeline time, .timeline .quien { display: block; font-size: .78rem; color: var(--suave); }
+.timeline p { font-size: .92rem; }
+.otros-req { margin-top: 1rem; font-size: .88rem; color: var(--suave); }
+.otros-req ul { margin: .35rem 0 0 1.1rem; }
+.bloque + .bloque { margin-top: 0; }
+
+.action-area { margin-top: 1rem; }
+.action-area .lista-docs { margin-top: 1rem; }

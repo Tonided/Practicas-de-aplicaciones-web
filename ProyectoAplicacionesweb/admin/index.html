@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - Becas Uleam</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="styleadmin.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo"><span aria-hidden="true">U</span>Admin Becas</div>
+            <nav aria-label="Menú del administrador">
+                <a href="index.html" class="active" aria-current="page">Verificación de Postulaciones</a>
+                <a href="../preguntas/index.html">Preguntas y respuestas</a>
+                <a href="reportes.html">Reportes Generales</a>
+                <a href="becas.html">Configuración de Becas</a>
+            </nav>
+            <button type="button" class="btn btn--secundario btn--sm logout">Cerrar sesión</button>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div>
+                    <h1>Solicitudes</h1>
+                    <p class="sub" id="resumen">Cargando…</p>
+                </div>
+                <div class="user-profile" id="usuario-nombre"></div>
+            </header>
+
+            <section class="kpis" id="kpis" aria-label="Resumen de solicitudes"></section>
+
+            <section class="card table-container">
+                <div class="barra">
+                    <label for="filtro">Mostrar</label>
+                    <select id="filtro">
+                        <option value="resolver">Listas para resolver</option>
+                        <option value="todas">Todas las solicitudes</option>
+                    </select>
+                </div>
+                <div class="tabla-wrap">
+                    <table class="tabla data-table">
+                        <thead>
+                            <tr><th>Cédula</th><th>Estudiante</th><th>Tipo de Beca</th><th>Estado</th><th>Acciones</th></tr>
+                        </thead>
+                        <tbody id="tabla-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <dialog id="modal" class="modal" aria-labelledby="modal-titulo"></dialog>
+
+    <script src="../assets/js/core.js"></script>
+    <script src="scriptadmin.js"></script>
+</body>
+</html>

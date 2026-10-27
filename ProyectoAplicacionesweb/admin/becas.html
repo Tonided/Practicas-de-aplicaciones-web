@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de becas - Becas Uleam</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="styleadmin.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo"><span aria-hidden="true">U</span>Admin Becas</div>
+            <nav aria-label="Menú del administrador">
+                <a href="index.html">Verificación de Postulaciones</a>
+                <a href="../preguntas/index.html">Preguntas y respuestas</a>
+                <a href="reportes.html">Reportes Generales</a>
+                <a href="becas.html" class="active" aria-current="page">Configuración de Becas</a>
+            </nav>
+            <button type="button" class="btn btn--secundario btn--sm logout">Cerrar sesión</button>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div>
+                    <h1>Configuración de becas</h1>
+                    <p class="sub" id="resumen">Cargando…</p>
+                </div>
+                <div class="acciones-cab">
+                    <button type="button" class="btn btn--primario btn--sm" id="btn-nueva">Nueva beca</button>
+                    <div class="user-profile" id="usuario-nombre"></div>
+                </div>
+            </header>
+
+            <section class="card table-container">
+                <div class="tabla-wrap">
+                    <table class="tabla data-table">
+                        <thead>
+                            <tr><th>Beca</th><th>Requisitos</th><th>Postulaciones</th><th>Estado</th><th>Acciones</th></tr>
+                        </thead>
+                        <tbody id="tabla-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <dialog id="modal" class="modal" aria-labelledby="modal-titulo"></dialog>
+
+    <script src="../assets/js/core.js"></script>
+    <script src="becasscript.js"></script>
+</body>
+</html>

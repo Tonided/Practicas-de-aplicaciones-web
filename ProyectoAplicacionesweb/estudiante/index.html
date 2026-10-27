@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Becas disponibles - Becas Uleam</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="estudiantestyles.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar__marca"><span aria-hidden="true">U</span><b>Becas y Ayudas Económicas</b></div>
+        <div class="topbar__usuario">
+            <a class="topbar__enlace" href="../preguntas/index.html">Preguntas y respuestas</a>
+            <span id="usuario-nombre"></span>
+            <button type="button" class="btn btn--secundario btn--sm btn-logout">Cerrar sesión</button>
+        </div>
+    </header>
+
+    <nav class="tabs" aria-label="Secciones del estudiante">
+        <div class="tabs__in">
+            <a href="#/becas" data-tab="becas">Becas disponibles</a>
+            <a href="#/postulaciones" data-tab="postulaciones">Mis postulaciones <span class="contador" id="badge-notif" hidden aria-label="Notificaciones sin leer"></span></a>
+        </div>
+    </nav>
+
+    <main class="contenedor" id="vista"></main>
+
+    <dialog id="modal" class="modal" aria-labelledby="modal-titulo"></dialog>
+
+    <script src="../assets/js/core.js"></script>
+    <script src="estudiantescript.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* Portal institucional. Titulares en serif para dar tono académico */
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; }
+.sitio-cab { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 1.5rem; background: #fff; border-bottom: 1px solid var(--borde); }
+.marca { display: flex; align-items: center; gap: .75rem; color: var(--azul-900); }
+.marca:hover { text-decoration: none; }
+.marca span { display: grid; line-height: 1.2; }
+.marca small { font-size: .74rem; font-weight: 500; color: var(--suave); }
+.menu { display: flex; align-items: center; gap: 1.1rem; }
+.menu a:not(.btn) { color: var(--texto); font-size: .92rem; }
+.menu-btn { display: none; padding: .45rem .9rem; border: 1px solid var(--borde); border-radius: 8px; background: #fff; font-family: inherit; font-weight: 600; cursor: pointer; }
+
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 2.5rem; max-width: 1120px; margin: 0 auto; padding: 4rem 1.5rem; }
+.hero h1 { font-size: clamp(2rem, 4.2vw, 3rem); }
+.hero p { margin: 1.1rem 0 1.8rem; max-width: 52ch; font-size: 1.05rem; color: var(--suave); }
+.hero__acciones { display: flex; flex-wrap: wrap; gap: .8rem; }
+.hero__img { width: 100%; height: auto; border-radius: 24px; box-shadow: var(--sombra); }
+
+.seccion { padding: 4rem 1.5rem; }
+.seccion > * { max-width: 1120px; margin-left: auto; margin-right: auto; }
+.seccion--gris { background: #fff; border-block: 1px solid var(--borde); }
+.seccion h2 { margin-bottom: 1.6rem; font-size: 1.9rem; }
+.dos-col { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: start; }
+.dos-col p { margin-bottom: .9rem; color: var(--suave); }
+.rejilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.tarjeta { padding: 1.5rem; background: #fff; border: 1px solid var(--borde); border-radius: var(--radio); box-shadow: var(--sombra); }
+.seccion--gris .tarjeta { box-shadow: none; background: var(--fondo); }
+.tarjeta h3 { margin-bottom: .5rem; font-size: 1.15rem; }
+.tarjeta p { color: var(--suave); font-size: .95rem; }
+.tarjeta svg { width: 34px; height: 34px; margin-bottom: .9rem; fill: none; stroke: var(--azul); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.pronto { margin-top: 1.5rem; font-size: .9rem; color: var(--suave); }
+
+.provisional { padding: .1rem .4rem; border: 1px dashed #c99a1e; border-radius: 4px; background: #fff7d6; color: #7a5a00; font-size: .88rem; }
+.pie { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 2.5rem max(1.5rem, calc((100% - 1120px) / 2)); background: var(--azul-900); color: rgba(255, 255, 255, .85); font-size: .92rem; }
+.pie b { color: #fff; }
+.pie p { margin-top: .4rem; }
+
+@media (max-width: 900px) {
+  .menu-btn { display: block; }
+  .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: .6rem; padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid var(--borde); }
+  .menu.abierto { display: flex; }
+  .menu .btn { justify-content: center; }
+  .hero, .dos-col, .rejilla, .pie { grid-template-columns: 1fr; }
+  .hero { padding: 2.5rem 1.25rem; gap: 1.75rem; }
+  .seccion { padding: 2.75rem 1.25rem; }
+  .marca small { display: none; }
+}

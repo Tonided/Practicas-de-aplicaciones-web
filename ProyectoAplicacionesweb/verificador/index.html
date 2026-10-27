@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de documentos - Becas Uleam</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="verificadorstyles.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar__marca"><span aria-hidden="true">U</span><b>Becas y Ayudas Económicas</b></div>
+        <div class="topbar__usuario">
+            <span id="usuario-nombre"></span>
+            <button type="button" class="btn btn--secundario btn--sm btn-logout">Cerrar sesión</button>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <div class="cab">
+            <div>
+                <h1>Verificación de documentos</h1>
+                <p class="sub" id="resumen"></p>
+            </div>
+            <div class="filtro">
+                <label for="filtro">Mostrar</label>
+                <select id="filtro">
+                    <option value="pendientes">Por verificar</option>
+                    <option value="todas">Todas las solicitudes</option>
+                </select>
+            </div>
+        </div>
+
+        <section class="card">
+            <div class="tabla-wrap">
+                <table class="tabla">
+                    <thead>
+                        <tr><th>Cédula</th><th>Estudiante</th><th>Tipo de beca</th><th>Estado</th><th>Acciones</th></tr>
+                    </thead>
+                    <tbody id="tabla-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="modal" class="modal" aria-labelledby="modal-titulo"></dialog>
+
+    <script src="../assets/js/core.js"></script>
+    <script src="verificadorscript.js"></script>
+</body>
+</html>

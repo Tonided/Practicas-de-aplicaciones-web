@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - Sistema de Becas Uleam</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+</head>
+<body>
+    <main class="login">
+        <aside class="login__marca">
+            <div class="emblema" aria-hidden="true">U</div>
+            <h1>Sistema de Becas y Ayudas Económicas</h1>
+            <p>Postula a una beca, sube tus requisitos y revisa el estado de tu trámite desde un solo lugar.</p>
+            <ul>
+                <li>Consulta requisitos y fechas de postulación</li>
+                <li>Sube tus documentos en formato PDF</li>
+                <li>Recibe una notificación cuando haya resolución</li>
+            </ul>
+            <small>Universidad Laica Eloy Alfaro de Manabí</small>
+        </aside>
+
+        <section class="login__panel">
+            <form id="login-form" class="card login__card" novalidate>
+                <h2>Iniciar sesión</h2>
+                <p class="sub">Ingresa con tu correo institucional.</p>
+
+                <div class="campo" id="campo-email">
+                    <label for="email">Correo institucional</label>
+                    <input type="email" id="email" placeholder="usuario@uleam.edu.ec" autocomplete="username">
+                    <span class="campo__error" id="error-email"></span>
+                </div>
+
+                <div class="campo" id="campo-clave">
+                    <label for="clave">Contraseña</label>
+                    <div class="clave">
+                        <input type="password" id="clave" placeholder="Tu contraseña" autocomplete="current-password">
+                        <button type="button" id="ver-clave" class="clave__ver" aria-label="Mostrar contraseña">Mostrar</button>
+                    </div>
+                    <span class="campo__error" id="error-clave"></span>
+                </div>
+
+                <p class="alerta alerta--ok" id="aviso-registro" role="status" hidden>Tu cuenta fue creada. Ya puedes iniciar sesión.</p>
+
+                <p class="alerta" id="error-general" role="alert" hidden></p>
+
+                <button type="submit" class="btn btn--primario btn--bloque" id="btn-ingresar">Ingresar</button>
+
+                <div class="links">
+                    <a href="#" data-proximamente>¿Olvidaste tu contraseña?</a>
+                    <span>¿No tienes cuenta? <a href="../registro/index.html">Crear cuenta</a></span>
+                    <a href="../inicio/index.html">Volver al portal</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="../assets/js/core.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
